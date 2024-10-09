@@ -1,0 +1,83 @@
+---
+// links
+const links: Array<{ label: string; url: string }> = [
+  {
+    label: "Home",
+    url: "/",
+  },
+  {
+    label: "About Us",
+    url: "/about",
+  },
+  {
+    label: "Contact Us",
+    url: "/contact",
+  },
+  {
+    label: "Our Social Media",
+    url: "//instagram.com/femprish",
+  },
+];
+---
+
+<section
+  @click="open = ! open"
+  x-show="open"
+  class="z-[45] h-screen w-screen bg-black/60 fixed top-0"
+>
+</section>
+<aside
+  x-show="open"
+  x-transition:enter="transition duration-300"
+  x-transition:enter-start="transform -translate-x-full"
+  x-transition:enter-end="transform translate-x-0"
+  x-transition:leave="transition duration-100"
+  x-transition:leave-start="transform"
+  x-transition:leave-end="transform -translate-x-full"
+  class="z-50 px-7 p-5 w-[90%] transform top-0 left-0 md:w-5/12 bg-prish-100 fixed h-full overflow-auto"
+>
+  <button
+    @click="open = ! open"
+    type="button"
+    aria-label="close_navigation"
+    class="absolute top-0 right-5 mt-4 hover:bg-prish-200/30 rounded-full"
+  >
+    <!-- cross sign  -->
+    <svg
+      class="w-6 h-6 m-1"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </button>
+  <ul
+    @click="open = ! open"
+    class="divide-y divide-prish-300 font-normal tracking-widest mt-10"
+  >
+    {
+      links.map((link) => (
+        <li>
+          <a
+            href={link.url}
+            aria-label={link.label.toLowerCase()}
+            class="my-4 inline-block hover:underline hover:decoration-wavy hover:underline-offset-4 transition"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+    <li>
+      <a
+        href="/contact"
+        class="my-8 rounded-lg w-full text-center font-semibold inline-block bg-prish-300 hover:bg-transparent hover:border-2 hover:text-prish-300 hover:border-prish-300 px-3 py-2 text-white hover:underline hover:decoration-wavy hover:underline-offset-4 transition"
+        >Message Us</a
+      >
+    </li>
+  </ul>
+</aside>

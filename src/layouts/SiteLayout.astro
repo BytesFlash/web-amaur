@@ -1,0 +1,82 @@
+---
+// imports
+import Header from "@/components/Header.astro";
+import Drawer from "@/components/Drawer.astro";
+import Footer from "@/components/Footer.astro";
+
+// props
+type Props = {
+  title?: string;
+};
+const { title } = Astro.props;
+
+// Meta Data
+const finalTitle = title
+  ? title + " - AMAUR Chile"
+  : "AMAUR Chile - Impulsando el cambio, abrazando la perfección";
+const description = ``;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    {/* Basic Tags */}
+    <title>{finalTitle}</title>
+    <meta name="description" content={description} />
+
+    {/* Og  & Twitter Tags */}
+    <meta property="og:title" content={finalTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/banner.png" />
+    <meta property="og:url" content="https://femprish.org" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:title" content={finalTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/logo.png" />
+    <meta name="twitter:card" content="summary" />
+    <title>{finalTitle}</title>
+  </head>
+  <body class="bg-prish-50">
+    <header class="z-40" x-data="{ open: false }">
+      <Header />
+      <Drawer />
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <Footer />
+    </footer>
+  </body>
+</html>
+
+<!-- global CSS  -->
+<style is:global>
+  /* test font  */
+  @import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@500&display=swap");
+
+  /* tailwind css */
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  html,
+  body {
+    font-family: "Edu NSW ACT Foundation", cursive;
+  }
+  /* selection color  */
+  ::selection {
+    color: #f15963;
+    background: #f8dfdb;
+  }
+
+  /* re using styles  */
+  @layer components {
+    .btn-primary {
+      @apply transition ease-in-out hover:shadow-md hover:scale-110 inline-flex rounded-2xl text-white bg-[#f15963] border-0 py-2 px-6 focus:outline-none text-xl;
+    }
+  }
+</style>

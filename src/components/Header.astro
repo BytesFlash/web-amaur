@@ -1,0 +1,75 @@
+---
+// links
+const links: Array<{ label: string; url: string }> = [
+  {
+    label: "Inicio",
+    url: "/",
+  },
+  {
+    label: "Nosotros",
+    url: "/about",
+  },
+  {
+    label: "Contactanos",
+    url: "/contact",
+  },
+  {
+    label: "Our Social Media",
+    url: "//instagram.com/femprish",
+  },
+];
+---
+
+<nav
+  class="bg-gradient-to-b w-full px-6 justify-between from-prish-100 h-16 z-40 top-0 backdrop-blur-sm py-6 absolute flex"
+>
+  <div class="-my-3">
+    <a href="/" aria-label="logo_home">
+      <img
+        class="hover:scale-110 transition w-24 h-21 rounded-full"
+        src="/logo.png"
+        alt="logo"
+      />
+    </a>
+  </div>
+  <div class="text-right align-right">
+    <!-- hamburger  -->
+    <button
+      aria-label="open_navigation"
+      type="button"
+      class="md:hidden block"
+      @click="open = !open"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.8"
+        class="w-8 h-8 stroke-prish-300"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+      </svg>
+    </button>
+    <!-- links  -->
+    <div class="hidden md:block">
+      <ul class="flex gap-6">
+        {
+          links.map((link) => (
+            <li class="flex items-center justify-center">
+              <a
+                href={link.url}
+                aria-label={link.label.toLowerCase()}
+                class="text-prish-300 underline-offset-8 underline decoration-wavy text-lg tracking-wider ease-in-out hover:underline-offset-2 font-medium transition-all"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</nav>

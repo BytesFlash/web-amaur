@@ -1,9 +1,6 @@
 # 👋 Amaur - Sitio Web Oficial
-> Este proyecto es el sitio web oficial de **Amaur**, desarrollado utilizando [Astro](https://astro.build).
+> Este proyecto es el sitio web oficial de **Amaur**(https://amaur.cl), desarrollado utilizando [Astro](https://astro.build).
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
 
 ## 🚀 Estructura del proyecto
 

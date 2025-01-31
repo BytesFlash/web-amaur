@@ -5,10 +5,9 @@ module.exports = {
     extend: {
       colors: {
         prish: {
-          50: "#f8dfdb",
-          100: "#fdb9ae",
-          200: "#f15963",
-          300: "#55241d",
+          100: '#E3F2FD',
+          200: '#90CAF9',
+          300: '#42A5F5',
         },
       },
     },
